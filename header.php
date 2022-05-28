@@ -9,7 +9,7 @@
     <a href="#">Office</a>
     <a href="schedule.html">Schedule</a>
     <a href="maps.php">Maps</a>
-    <a href="#">Profile</a>
+    <a href="profile.php">Profile</a>
   </div>
 </div>
     
