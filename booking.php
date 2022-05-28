@@ -33,6 +33,7 @@
         if ($ab){    
             $sql2 = "INSERT INTO bookings (id_user, id_birou, data, ora_inceput, ora_sfarsit) VALUES ('$id_user', '$id_birou', '$data', '$start_time','$finish_time')";
             $conn->query($sql2);
+            header("Location: content.php");
         }
         else {
             header("Location: maps.php?er=2&st=$st&ft=$ft");
