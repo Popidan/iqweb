@@ -1,22 +1,21 @@
 <?php
 session_start();
 include "db_con.php";
-//verificam daca s-a logat(daca scrie direct linkul inseamna ca nu s-a logat)
-if(!isset($_SESSION["User"])){
-    header("Location: index.php");
-}
 ?>
 <!doctype html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+     <link rel="stylesheet" href="font-awesome/css/all.min.css">
   
 <meta charset="utf-8">
 <title>User Profile</title>
     
 <?php include_once("header.php"); ?>    
-    
+<style>
+        .header a {color: #ffffff !important;}
+    </style>    
 </head>
 
     <div class="dv"></div>
@@ -26,23 +25,23 @@ if(!isset($_SESSION["User"])){
         <div class="user_left_info">
             <img src="Poze\Background\profile_picture.png" height="300px" width="300px" class="profile_pic">
                 <div class="user_details">
-                    <p>Nume Angajat: <?php echo $_SESSION["User"];?></p>
-                    <p><?php
-                        if($_SESSION["Admin"] == 1){
-                            echo "Admin";
-                        }
-                        else{
-                            echo "User";
-                        }
-                        //echo $_SESSION["Email"];
-                        ?></p>
-                    <p>Email: <?php echo $_SESSION["Email"]?></p>
-<!--                    <p>Sediu Companie</h1>-->
+                    <p><?php echo $_SESSION["User"]?></p>
+                    <p><?php if($_SESSION["Admin"] == 1){
+                        echo "Admin";
+                    }
+                     else{
+                        echo "User";
+                        }    
+                    ?>
+                   </p>
+                    <p><?php echo $_SESSION["Email"]?></p>
+                    
                 </div>
+                
         </div>
-
-
-
+        <div class="status_check">
+            <p>No Reservation Found</p>
+        </div>
 
 
 

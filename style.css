@@ -293,7 +293,9 @@ hr.solid {
     background-color: transparent;
 }
 
-/profile/
+/*profile*/
+
+
 
 .user_details p{
   font-size: 20px;
@@ -303,18 +305,19 @@ hr.solid {
 }
 
 .user_left_info{
+  flex-grow: 0;
   margin-left: 50px;
   margin-bottom: 100px;
   width: 320px;
-  border-color: black;
   border-width: 10px;
   border: 5px #0076C9 solid;
-  border-radius: 5%;
+  border-radius: 30px;
   background-color: #d0d0d0;
 }
 .profile_pic{
   height: 200px;
   width: 200px;
+  margin-top: 20px;
   margin-left: 50px;
   margin-right: auto;
   margin-bottom: 70px;
@@ -332,6 +335,27 @@ hr.solid {
   background-color: #464646; 
 }
 
+.container_profile{
+  display: flex;
+  
+}
+.status_check{
+  flex-grow: 0.9;
+  margin-left: 50px;
+  margin-bottom: 100px;
+  width: 320px;
+  border-width: 10px;
+  border: 5px #0076C9 solid;
+  border-radius: 30px;
+  background-color: #d0d0d0; 
+
+}
+.status_check p{
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20%;
+}
+
 @media (min-width: 64rem){
 .cd-schedule-modal__body {
     height: 100% !important;
@@ -342,5 +366,36 @@ hr.solid {
 .date_place_buttons{
     display: flex;
     align-items: center;
+}
+/Office/
+.jumbotron {
+  background-color: #f4511e;
+  color: #fff;
+  padding: 100px 25px;
+}
+.container-fluid {
+  padding: 60px 50px;
+}
+.bg-grey {
+  background-color: #f6f6f6;
+}
+.logo {
+  font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+}
+.col-sm-8 h2
+{
+    font-size:60px;
+    margin-bottom: 150px;
+}
+.col-sm-8 h3
+{
+    font-size:25px;
+    
 }
 
