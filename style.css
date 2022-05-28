@@ -1,0 +1,305 @@
+@charset "utf-8";
+
+.logo
+{
+    width:150px;  
+}
+
+.background_img
+{
+   /* Location of the image */
+   background-image: url("Poze/Background/Background_Image.png");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-color: #464646; 
+}
+.vl 
+{
+  border-right: 6px solid black;
+  height: 50px;
+}
+
+.header 
+{
+  overflow: hidden;
+  background-color: transparent;
+  padding: 7px 10px;
+  
+}
+
+.header a 
+{
+  float: left;
+  color: #d0d0d0;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header-right a:hover 
+{
+  background-color: #111111;
+  color: #d0d0d0;
+}
+
+.header-right 
+{
+  
+  float: right;
+  padding-top: inherit;
+  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+  margin-right: 3%;
+}
+
+@media screen and (max-width: 500px) 
+{
+  .header a 
+  {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right 
+  {
+    float: none;
+  }
+}
+
+.dv
+{
+    padding: 50px;
+}
+
+.home_info
+{
+  text-align-last: center;
+  font-size: 26px;
+  color: #d0d0d0;
+}
+
+.home_info h1
+{
+  font-size: 60px;
+  margin-bottom: 150px;
+}
+
+.home_info span{
+  color: #0076C9;
+}
+
+.home_info p
+{
+  font-size: 35px;
+}
+
+.home_info h4{
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+/* Log In */
+.login_only{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  
+  }
+.body_login{
+   background-image: url("Poze/Background/Background_LogIn.jpg");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-color: #464646; 
+}
+
+.login-form{
+  width: 350px;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  color: #fff;
+}
+
+.login-form h1{
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0;
+  
+}
+
+.login-form p{
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.login-form input{
+  font-size: 16px;
+  width: 100%;
+  padding: 15px 10px;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+}
+
+.login-form button{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 50%;
+  border-radius: 5px;
+}
+
+
+/*seats*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.body_seat {
+  background-color: #242333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+.movie-container {
+  margin: 20px 25px;
+}
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.seat {
+  background-color: #444451;
+  height: 40px;
+  width: 65px;
+  margin: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: #6feaf6;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 2px;
+}
+
+.row {
+  display: flex;
+}
+
+
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: #6feaf6;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+
+.transparent_seat{
+    background-color: transparent;
+}
+
+
+
+@media (min-width: 64rem){
+.cd-schedule-modal__body {
+    height: 100% !important;
+    width: 60% !important; }
+}
+    
+
+.date_place_buttons{
+    display: flex;
+    align-items: center;
+}
+
