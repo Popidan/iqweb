@@ -30,6 +30,7 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+     <link rel="stylesheet" href="font-awesome/css/all.min.css">
   
 <meta charset="utf-8">
 <title>Desk Booking</title>
