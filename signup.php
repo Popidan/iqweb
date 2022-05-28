@@ -6,6 +6,7 @@ session_start();
     $Nume = $_POST["nume"];
     $Email = $_POST["email"];
     $Parola = $_POST["parola"];
+    $Parola_hsh = password_hash($Parola, PASSWORD_DEFAULT);
     $Cod = $_POST["cod"];
     $Adm = 0;
     $Valabil = false;
@@ -28,7 +29,7 @@ session_start();
                     $Adm = 1;
                     // declaram o variabila user care va exista pe timpul sesiunii
                     $_SESSION["User"] = $Nume;
-                    $sql = "INSERT INTO users (nume, email, parola, confirm, admin) VALUES ('$Nume', '$Email', '$Parola', 0, '$Adm')";
+                    $sql = "INSERT INTO users (nume, email, parola, confirm, admin) VALUES ('$Nume', '$Email', '$Parola_hsh', 0, '$Adm')";
                     $conn->query($sql);
                     header("Location: content.php?User='$Nume'");
 
@@ -46,7 +47,7 @@ session_start();
                 //in acest caz introducem utilizatorul ca un user default
                 // declaram o variabila user care va exista pe timpul sesiunii
                 $_SESSION["User"] = $Nume;
-                $sql = "INSERT INTO users (nume, email, parola, confirm, admin) VALUES ('$Nume', '$Email', '$Parola', 0, '$Adm')";
+                $sql = "INSERT INTO users (nume, email, parola, confirm, admin) VALUES ('$Nume', '$Email', '$Parola_hsh', 0, '$Adm')";
                 $conn->query($sql);
                 header("Location: content.php");
             }

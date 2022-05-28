@@ -12,9 +12,11 @@ if(!empty($nume) && !empty($parola)){
     //verificam daca parola introdusa este identica cu cea din db
     $sql = "SELECT Parola FROM users WHERE Nume = '$nume'";
     $res = mysqli_query($conn, $sql);
+    
     if ($res->num_rows > 0) {
         $row = $res->fetch_assoc();
-        if($parola == $row["Parola"]){
+        $prl = $row["parola"];
+        if(password_verify($parola, $row["Parola"])){
             //daca parola este buna userul este redirectionat pe homepage si numele ii este trimis mai departe
             $_SESSION["User"] = $nume;
             header("Location: content.php?User='$nume'");
