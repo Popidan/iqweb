@@ -55,28 +55,8 @@ movieSelect.addEventListener('change', e => {
   setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
 });
-// Creating a cookie after the document is ready
 
-   
-// Function to create the cookie
-function createCookie(name, value, days) {
-    var expires;
-      
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    }
-    else {
-        expires = "";
-    }
-      
-    document.cookie = escape(name) + "=" + 
-        escape(value) + expires + "; path=/";
-}
 // Seat click event
-
-
 
 container.addEventListener('click', e => {
   if (
@@ -90,13 +70,7 @@ container.addEventListener('click', e => {
         el[i].classList.remove("selected");
     }
     e.target.classList.toggle('selected');
-    var elementu = document.getElementsByClassName("selected");
-    var name = e.target.getAttribute("name");
-    console.log(name);
-    $(document).ready(function () {
-    createCookie("nume", name, "10");
-});
-    
+
 //    updateSelectedCount();
   }
 });

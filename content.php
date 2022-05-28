@@ -3,6 +3,10 @@
     session_start();
     //include conexiunea la db
     include "db_con.php";
+    //verificam daca s-a logat(daca scrie direct linkul inseamna ca nu s-a logat)
+    if(!isset($_SESSION["User"])){
+        header("Location: index.php");
+    }
     //ia numele din sesiune
     $Nume = $_SESSION["User"];
     //declaram restul de variabile

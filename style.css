@@ -222,6 +222,10 @@
   background-color: #6feaf6;
 }
 
+.seat.selectedDefault {
+  background-color: #6feaf6;
+}
+
 .seat.occupied {
   background-color: #fff;
 }
