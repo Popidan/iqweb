@@ -11,10 +11,7 @@
     $st;
     $ft;
     //verificam sa fie datele in ordine
-    if($start_time >= $finish_time){
-        header("Location: maps.php?er=1");
-    }
-    else{
+ 
     $sql = "SELECT * FROM birouri WHERE nume_birou = '$nume_seat' AND etaj = '$etaj'";
     $res = mysqli_query($conn,$sql);
     $row = $res->fetch_assoc();
@@ -41,6 +38,10 @@
     }
     
    
-    echo $id_birou;
+    else {
+        $sql2 = "INSERT INTO bookings (id_user, id_birou, data, ora_inceput, ora_sfarsit) VALUES ('$id_user', '$id_birou', '$data', '$start_time','$finish_time')";
+            $conn->query($sql2);
+            header("Location: content.php");
     }
+    
 ?>

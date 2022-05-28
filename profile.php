@@ -1,6 +1,17 @@
 <?php
 session_start();
 include "db_con.php";
+if(!isset($_SESSION["User"])){
+    header("Location: index.php");
+    exit();
+}
+$Bookings = false;
+$Nume = $_SESSION["User"];
+$Uid =$_SESSION["IdUser"];
+$sql = "SELECT * FROM bookings WHERE id_user = '$Uid' AND data >= CURDATE()";
+$res = mysqli_query($conn,$sql);
+$row = $res->fetch_assoc();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -40,7 +51,17 @@ include "db_con.php";
                 
         </div>
         <div class="status_check">
-            <p>No Reservation Found</p>
+            <p><?php
+                if ($res->num_rows > 0){
+            
+                    echo $row["data"]."  ".$row["ora_inceput"]." ".$row["ora_sfarsit"];
+                    echo "<br/>";
+                
+                }
+                else {
+                    echo "Nu ai treaba boss";
+                }
+                ?></p>
         </div>
 
 

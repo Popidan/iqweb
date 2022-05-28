@@ -56,19 +56,7 @@
   margin-right: 3%;
 }
 
-@media screen and (max-width: 500px) 
-{
-  .header a 
-  {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .header-right 
-  {
-    float: none;
-  }
-}
+
 
 .dv
 {
@@ -84,6 +72,7 @@
 
 .home_info h1
 {
+    text-align: center;
   font-size: 60px;
   margin-bottom: 150px;
 }
@@ -94,10 +83,12 @@
 
 .home_info p
 {
+    text-align: center;
   font-size: 35px;
 }
 
 .home_info h4{
+    text-align: center;
   font-size: 30px;
 }
 
@@ -398,4 +389,105 @@ hr.solid {
     font-size:25px;
     
 }
+
+/responsive/
+
+@media (max-width: 709px){
+    .home_info h1 {
+    font-size: 40px;
+    margin-bottom: 120px;
+    text-align: -webkit-center;
+}
+    .home_info p{
+        font-size: 27px;
+    }
+    .home_info h4 {
+    font-size: 30px;
+    text-align: center;
+}
+    
+}
+@media(max-width: 604px){
+    .header-right{
+        float: none !important;
+        display: inline-flex !important;
+    }
+    .header{
+        text-align: center !important;
+    }
+    .header a{
+        float: none!important;
+    }
+    .home_info h4 {
+    font-size: 30px;
+    text-align: center;
+}
+}
+
+@media(max-width:485px){
+    .home_info h1 {
+    font-size: 30px;
+    margin-bottom: 100px;
+    text-align: -webkit-center;
+}
+    .home_info p{
+        font-size: 20px;
+    }
+    .home_info h4 {
+    font-size: 30px;
+    text-align: center;
+}
+}
+
+@media(max-width:485px){
+    .header a {
+    float: left;
+    color: #d0d0d0;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 30px;
+    border-radius: 4px;
+}
+
+ .home_info h4 {
+    font-size: 30px;
+    text-align: center;
+}
+    
+    
+}
+
+
+@media(max-width:745px){
+    .user_left_info {
+  
+    width: 270px !important;
+    
+}
+    .status_check{
+        width: 10px!important;
+    }
+    .profile_pic{
+        margin-left: 30px !important;
+    }
+}
+
+@media(max-width:656px){
+    
+    .container_profile {
+     display: unset !important;
+    text-align: -webkit-center !important;
+}
+    .status_check{
+        width: 270px !important;
+    }
+
+    .status_check p{
+        font-size: 35px !important;
+    }
+}
+
+
 
