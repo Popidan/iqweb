@@ -20,6 +20,10 @@
         $UId = $row["id_user"];
         $Admin = $row["admin"];
     }
+    //am creat variabile care raman in sesiune
+    $_SESSION["Email"] = $Email;
+    $_SESSION["IdUser"] = $UId;
+    $_SESSION["Admin"] = $Admin;
     //echo $Email;
 
     

@@ -1,3 +1,11 @@
+<?php
+session_start();
+include "db_con.php";
+//verificam daca s-a logat(daca scrie direct linkul inseamna ca nu s-a logat)
+if(!isset($_SESSION["User"])){
+    header("Location: index.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,10 +26,18 @@
         <div class="user_left_info">
             <img src="Poze\Background\profile_picture.png" height="300px" width="300px" class="profile_pic">
                 <div class="user_details">
-                    <p>Nume Angajat</p>
-                    <p>Status(User/Admin)</p>
-                    <p>Oras</p>
-                    <p>Sediu Companie</h1>
+                    <p>Nume Angajat: <?php echo $_SESSION["User"];?></p>
+                    <p><?php
+                        if($_SESSION["Admin"] == 1){
+                            echo "Admin";
+                        }
+                        else{
+                            echo "User";
+                        }
+                        //echo $_SESSION["Email"];
+                        ?></p>
+                    <p>Email: <?php echo $_SESSION["Email"]?></p>
+<!--                    <p>Sediu Companie</h1>-->
                 </div>
         </div>
 
