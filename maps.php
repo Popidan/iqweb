@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+include "db_con.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,7 @@
     <title>Movie Seat Booking</title>
   </head>
   <body class="body_seat">
+      <form id = "main_form" action = "booking.php" method = "post">
       <div class="date_place_buttons">
           
           
@@ -24,7 +26,7 @@
           
             <div class="movie-container">
       <label>Pick a room</label>
-      <select name = "camera"id="movie">
+      <select name = "camera" id="movie" required>
         <option value="1">room 1</option>
         <option value="2">room 2</option>
         <option value="3">room 3</option>
@@ -36,8 +38,9 @@
     <div class="movie-container">      
     <div class="dropdown">
     <label>Pick a date: </label>
-        <input type="date">
+        <input type="date" name = "data" required>
 </div>
+        
         </div>
           
           
@@ -45,7 +48,7 @@
           <div class="movie-container">      
     <div class="dropdown">
     <label>Pick a time to start work: </label>
-        <input type="time">
+        <input type="time" name = "start_time" required>
         
 </div>
               
@@ -57,7 +60,18 @@
           <div class="movie-container">      
     <div class="dropdown">
     <label>Pick a time to finish work: </label>
-        <input type="time">
+        <input type="time" name = "finish_time" required>
+    <?php
+        $er = $_GET['er'];
+        $st = $_GET['st'];
+        $ft = $_GET['ft'];
+    if ($er == 1){
+        echo "<script>alert('Ora de inceput trebuie sa fie mai mica decat ora de sfarsit');</script>";
+        }
+    if ($er == 2){
+        echo "<script>alert('Acest birou este ocupat de la  $st la $ft ');</script>";
+    }
+        ?>
         
 </div>
               
@@ -71,7 +85,7 @@
     
           
       </div>
-          
+      </form>    
 
     <ul class="showcase">
       <li>
@@ -132,11 +146,11 @@
         <hr class="solid">
         
       <div class="row">
-        <div class="seat"></div>
+        <div name = "s7" class="seat"></div>
            <hr class="solid">
         <div class="seat transparent_seat"></div>
             <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s8" class="seat"></div>
             <hr class="solid">
         <div class="seat transparent_seat"></div>
              <hr class="solid">
@@ -144,7 +158,7 @@
               <hr class="solid">
         <div class="seat transparent_seat"></div>
                <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s9" class="seat"></div>
                <hr class="solid">
         <div class="seat transparent_seat"></div>
       </div>
@@ -154,7 +168,7 @@
       <div class="row">
         <div class="seat transparent_seat"></div>
            <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s10" class="seat"></div>
             <hr class="solid">
         <div class="seat transparent_seat"></div>
             <hr class="solid">
@@ -162,21 +176,21 @@
              <hr class="solid">
         <div class="seat transparent_seat"></div>
               <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s11" class="seat"></div>
                <hr class="solid">
         <div class="seat transparent_seat"></div>
                <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s12" class="seat"></div>
       </div>
         
         <hr class="solid">
         
       <div class="row">
-        <div class="seat"></div>
+        <div name = "s13" class="seat"></div>
            <hr class="solid">
         <div class="seat transparent_seat"></div>
             <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s14" class="seat"></div>
             <hr class="solid">
         <div class="seat transparent_seat"></div>
              <hr class="solid">
@@ -184,7 +198,7 @@
               <hr class="solid">
         <div class="seat transparent_seat"></div>
                <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s15" class="seat"></div>
                <hr class="solid">
         <div class="seat transparent_seat"></div>
       </div>
@@ -194,7 +208,7 @@
      <div class="row">
         <div class="seat transparent_seat"></div>
            <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s16" class="seat"></div>
             <hr class="solid">
         <div class="seat transparent_seat"></div>
             <hr class="solid">
@@ -202,11 +216,11 @@
              <hr class="solid">
         <div class="seat transparent_seat"></div>
               <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s17" class="seat"></div>
                <hr class="solid">
         <div class="seat transparent_seat"></div>
                <hr class="solid">
-        <div class="seat"></div>
+        <div name = "s18" class="seat"></div>
       </div>
         
         
@@ -214,11 +228,11 @@
     </div>
 
     <p class="text">
-      You have selected <span id="count">0</span> seats for work<span
-</span>
-        <button style="width: 120px;  margin-left: 40px;" type="submit">Continue</button>
+      
+        <button style="width: 120px;  margin-left: 40px;"   form="main_form" type="submit">Continue</button>
     </p>
 
     <script src="script.js"></script>
+
   </body>
 </html>

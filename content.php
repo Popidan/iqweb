@@ -28,6 +28,7 @@
     $_SESSION["Email"] = $Email;
     $_SESSION["IdUser"] = $UId;
     $_SESSION["Admin"] = $Admin;
+    $_SESSION["User"] = $Nume;
     //echo $Email;
 
     
