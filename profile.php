@@ -8,7 +8,7 @@ if(!isset($_SESSION["User"])){
 $Bookings = false;
 $Nume = $_SESSION["User"];
 $Uid =$_SESSION["IdUser"];
-$sql = "SELECT * FROM bookings WHERE id_user = '$Uid' AND data >= CURDATE()";
+$sql = "SELECT * FROM bookings WHERE id_user = '$Uid' AND data >= CURDATE() ORDER BY data ASC";
 $res = mysqli_query($conn,$sql);
 $row = $res->fetch_assoc();
 
@@ -54,8 +54,10 @@ $row = $res->fetch_assoc();
             <p><?php
                 if ($res->num_rows > 0){
             
-                    echo $row["data"]."  ".$row["ora_inceput"]." ".$row["ora_sfarsit"];
+                    echo $row["data"]."  ".$row["ora_inceput"]."-".$row["ora_sfarsit"];
+                    $_SESSION["id_book"] = $row["id_booking"];
                     echo "<br/>";
+                    
                 
                 }
                 else {

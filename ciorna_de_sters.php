@@ -13,7 +13,7 @@
     $fill = mktime(0,0,0);
     //verificam sa fie datele in ordine
      if($start_time >= $finish_time){
-        header("Location: maps.php?er=1&st=0&ft=0");
+        header("Location: maps.php?er=1&st=$fill&ft=$fill");
     }
     else{
         $sql = "SELECT * FROM birouri WHERE nume_birou = '$nume_seat' AND etaj = '$etaj'";
@@ -37,7 +37,7 @@
                 header("Location: content.php");
             }
             else {
-                header("Location: maps.php?er=2&st=$st&ft=$ft");
+                header("Location: maps.php?er=2&st='$st'&ft='$ft'");
             }
         }
 
